@@ -55,7 +55,7 @@ const Qualifications = () => {
           e.target.style.boxShadow = "0 8px 15px rgba(39, 174, 96, 0.4)";
         }}
       >
-        Institute of Aviation Engineering & Technology (2023 - now)
+        42 AbuDhabi (2023 - now)
       </p>
     </section>
   );
