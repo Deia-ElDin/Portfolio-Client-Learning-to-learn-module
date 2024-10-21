@@ -1,0 +1,241 @@
+@import './general';
+
+.about-me {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+
+  .main-title {
+    text-align: center;
+    margin-bottom: 50px;
+    transform: scale(0.8);
+  }
+
+  .infos {
+    @include grid(2);
+    gap: var(--gap);
+    grid-template-rows: max-content;
+
+    .right-infos {
+      @include flex(row);
+      align-items: flex-start;
+      gap: var(--gap);
+
+      .info-block {
+        @include flex(column);
+        gap: var(--gap);
+        padding: var(--block-padding);
+        text-align: center;
+        border: 1px solid var(--color-2);
+        border-radius: 20px;
+        min-width: 150px;
+        height: max-content;
+        box-shadow: var(--box-shadow-white);
+
+        figure {
+          height: 30px;
+          width: 30px;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .details {
+          p {
+            font-size: 1rem;
+            padding-top: 10px;
+            color: var(--color-secondary);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .skills {
+    position: relative;
+
+    .skill-form {
+      position: absolute;
+      top: 80px;
+      right: 50%;
+      transform: translate(50%);
+      z-index: 1;
+      width: 450px;
+    }
+
+    .skills-list {
+      @include grid(2);
+      gap: var(--grid-2-gap);
+
+      .skill-block {
+        position: relative;
+
+        .edit-btn {
+          position: absolute;
+          top: 0;
+          right: calc(5% - 10px);
+          opacity: 0;
+          transition: var(--transition);
+        }
+
+        .name-container {
+          @include flex(row);
+          margin-bottom: 15px;
+          gap: 5px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+          }
+        }
+
+        .percentage-container {
+          @include flex(row);
+          justify-content: flex-start;
+          gap: var(--gap);
+          width: 95%;
+
+          p {
+            width: max-content;
+            white-space: nowrap;
+          }
+
+          .percentage-div {
+            width: 100%;
+            border: 1px solid var(--color-2);
+            border-radius: 5px;
+
+            .percentage-bar {
+              background-color: var(--color-secondary);
+            }
+          }
+        }
+
+        &:hover {
+          .edit-btn {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .jobs {
+    position: relative;
+
+    .job-form {
+      position: absolute;
+      top: 80px;
+      right: 50%;
+      transform: translate(50%);
+      z-index: 1;
+      width: 60%;
+      margin-bottom: 50px;
+
+      .country-fieldset,
+      .company-fieldset,
+      .date-fieldset {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    .jobs-list {
+      @include grid(2);
+      gap: var(--grid-2-gap);
+      padding-left: 20px;
+
+      .job-block {
+        @include flex(column);
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        border: 1px solid var(--color-2);
+        border-radius: 10px;
+        padding: 10px 30px;
+        width: 95%;
+        gap: 5px;
+        box-shadow: var(--box-shadow-white);
+
+        p {
+          font-size: 1rem;
+        }
+
+        .icon {
+          position: absolute;
+          top: -17%;
+          left: -3.5%;
+          @include flex(row);
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: var(--color-secondary);
+
+          .work-icon {
+            height: 60%;
+            width: 60%;
+            color: var(--color-white);
+          }
+        }
+
+        .edit-btn {
+          position: absolute;
+          top: 7px;
+          right: 3px;
+          opacity: 0;
+          transition: var(--transition);
+        }
+
+        .job-header {
+          @include flex(row);
+          justify-content: space-between;
+          width: 100%;
+
+          .working-period {
+            border: 1px solid var(--color-2);
+            width: max-content;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: var(--color-3);
+            font-size: 0.9rem;
+          }
+
+          .country {
+            @include flex(row);
+            gap: 10px;
+
+            p {
+              text-transform: capitalize;
+            }
+            .country-image {
+              @include flex(row);
+              img {
+                width: 40px;
+              }
+            }
+          }
+        }
+
+        .job-details {
+          .title {
+            color: var(--color-secondary);
+            min-width: max-content;
+            text-transform: capitalize;
+          }
+        }
+
+        &:hover {
+          .edit-btn {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,609 @@
+@media all and (max-width: 1250px) {
+  .home {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100vh;
+
+    .img-container {
+      width: 80%;
+    }
+  }
+
+  .portfolio .projects .projects-list {
+    @include grid(2);
+    justify-items: center;
+    gap: 50px 40px;
+  }
+}
+
+@media all and (max-width: 1160px) {
+  .about-me .infos .right-infos {
+    @include flex(row);
+    align-items: center;
+    gap: var(--gap);
+  }
+
+  .project-form .switch-btns-fieldset {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media all and (max-width: 1080px) {
+  .contact-me .contact-container {
+    @include flex(column);
+    gap: 60px;
+
+    .left-contact .contact-list {
+      @include grid(2);
+      grid-template-rows: max-content !important;
+      gap: var(--gap);
+      align-items: stretch;
+
+      .contact-block {
+        justify-content: space-between;
+
+        &:last-child {
+          grid-column: 1/3;
+        }
+      }
+    }
+
+    .right-contact {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: 1050px) {
+  .about-me .jobs {
+    .job-form {
+      width: 80%;
+    }
+
+    .jobs-list {
+      @include flex(column);
+      gap: 40px;
+    }
+  }
+
+  .portfolio .fetch-form .query-fieldset {
+    @include flex(row);
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 20px;
+    padding: 20px;
+
+    // to fix the fetch form on IPhone
+    .input-div,
+    .multi-inputs-section,
+    .btn-section,
+    .btns-section {
+      height: max-content !important;
+    }
+  }
+}
+
+@media all and (max-width: 1020px) {
+  .about-me .infos {
+    .left-infos {
+      @include flex(column);
+      justify-content: space-between;
+    }
+
+    .right-infos {
+      @include grid(2);
+
+      article:last-child {
+        grid-column: 1/3;
+      }
+    }
+  }
+
+  .portfolio .projects .projects-list {
+    @include grid(1);
+    justify-items: center;
+    gap: 50px;
+  }
+
+  .contact-me .contact-container .left-contact .contact-list .contact-block {
+    &:first-child,
+    &:nth-child(2) {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media all and (max-width: 950px) {
+  .home .left-home .img-container {
+    height: 80% !important;
+  }
+
+  .project-form .details-fieldset {
+    @include flex(column);
+  }
+}
+
+@media all and (max-width: 870px) {
+  .home {
+    @include grid(1);
+    grid-auto-rows: max-content;
+    gap: 60px;
+
+    .left-home .img-container {
+      height: 90% !important;
+    }
+
+    .login-form,
+    .profile-form {
+      position: absolute;
+      top: 25%;
+      right: 50%;
+      transform: translate(50%, -25%);
+      z-index: 1;
+      width: 400px;
+    }
+
+    .right-home p {
+      padding-left: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 850px) {
+  .portfolio .fetch-form .query-fieldset .input-div {
+    input[name='version'] {
+      height: 70px;
+
+      &::placeholder {
+        white-space: pre-line;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 830px) {
+  .about-me .jobs .job-form {
+    width: 90%;
+  }
+  .contact-me .contact-container .left-contact .contact-list {
+    @include flex(column);
+    gap: 20px;
+  }
+}
+
+@media all and (max-width: 770px) {
+  .portfolio .queries .btns {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .project-form .switch-btns-fieldset {
+    @include flex(column);
+
+    .switch-btn-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media all and (max-width: 750px) {
+  .about-me {
+    .infos {
+      @include flex(column);
+      gap: var(--gap);
+
+      .right-infos {
+        @include flex(row);
+        gap: var(--gap);
+      }
+    }
+
+    .skills .skills-list {
+      @include grid(2);
+      gap: 50px 40px;
+    }
+  }
+}
+
+@media all and (max-width: 735px) {
+  .project-form .drop-file-section {
+    label {
+      width: 90%;
+    }
+  }
+}
+
+@media all and (max-width: 720px) {
+  .portfolio .fetch-form .query-fieldset .input-div {
+    input[name='projectName'] {
+      height: 70px !important;
+
+      &::placeholder {
+        white-space: pre-line;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .about-me .jobs .job-form {
+    width: 100%;
+
+    .country-fieldset,
+    .company-fieldset,
+    .date-fieldset {
+      @include flex(column);
+      gap: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 685px) {
+  .about-me {
+    .infos .right-infos {
+      @include grid(2);
+      width: 100%;
+
+      .info-block {
+        width: 100%;
+      }
+
+      article:last-child {
+        grid-column: 1/3;
+      }
+    }
+    .skills .skills-list {
+      @include flex(column);
+      gap: 40px;
+
+      .skill-block {
+        width: 100%;
+      }
+    }
+  }
+
+  .contact-me .contact-container .right-contact form .person-details {
+    @include flex(column);
+  }
+}
+
+@media all and (max-width: 630px) {
+  .about-me .skills .skill-form {
+    width: 100%;
+  }
+
+  .contact-me .contact-container {
+    .contact-form,
+    .media-form {
+      width: 100%;
+    }
+  }
+
+  .portfolio .fetch-form .query-fieldset .sort {
+    .selector select:first-child {
+      font-size: 0.9rem !important;
+    }
+
+    .selected button {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .main-section {
+    width: calc(100vw - 50px) !important;
+    margin: 0 auto !important;
+  }
+
+  .section-title {
+    padding: 48px 0 !important;
+
+    h3 {
+      transform: translateX(50%) scale(1.4) !important;
+    }
+  }
+
+  h1 {
+    font-size: 3.5rem !important;
+  }
+
+  h2 {
+    font-size: 2.7rem !important;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .about-me,
+  .portfolio,
+  .project,
+  .contact-me {
+    padding: 0 !important;
+    margin-bottom: 115px !important;
+  }
+
+  .home {
+    width: 100vw !important;
+    margin-bottom: 115px !important;
+
+    .right-home {
+      padding: 0 20px;
+      p {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .about-me {
+    .skills .skill-block {
+      .edit-btn {
+        right: 0 !important;
+      }
+
+      .percentage-container {
+        width: 100% !important;
+      }
+    }
+
+    .jobs .jobs-list {
+      padding-left: 15px;
+
+      .job-block {
+        width: 100%;
+      }
+    }
+  }
+
+  .contact-me .contact-container {
+    padding: 0 !important;
+  }
+
+  .controls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-color: #16171a;
+    transition: var(--transition);
+
+    .controls-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      left: 20px;
+      z-index: 5;
+      transition: var(--transition);
+      height: 60px;
+    }
+
+    .controls-secondary {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 70px;
+      right: 10px;
+      left: 30px;
+      z-index: 4;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &:hover {
+      height: 105px;
+
+      .controls-secondary {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 550px) {
+  .project-form .date-fieldset {
+    @include flex(column);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .home {
+    gap: 0;
+
+    .left-home {
+      height: 90% !important;
+    }
+  }
+
+  .fetch-form .query-fieldset {
+    .input-div {
+      input[name='projectName'],
+      input[name='version'] {
+        &::placeholder {
+          position: relative;
+          top: -10px;
+        }
+      }
+
+      input::placeholder {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .portfolio .project-block,
+  .project .project-block {
+    padding: 20px 10px;
+
+    h4,
+    label {
+      font-size: 0.9rem;
+    }
+
+    td,
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .portfolio .fetch-form .query-fieldset .sort .selector select:first-child {
+    height: 50px;
+    white-space: pre-line;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .section-title {
+    padding: 48px 0 !important;
+
+    h3 {
+      transform: translateX(50%) scale(1.3) !important;
+    }
+  }
+
+  h2 {
+    font-size: 2.3rem !important;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+  }
+
+  h4 {
+    font-size: 1rem !important;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .home {
+    @include grid(1);
+    grid-template-rows: 720px max-content;
+    gap: 0;
+
+    .left-home .img-container {
+      margin-top: 10px;
+    }
+
+    .login-form,
+    .profile-form {
+      width: 300px !important;
+    }
+
+    .profile-form {
+      @include flex(row);
+
+      .drop-file-section {
+        width: 100%;
+
+        label {
+          width: 90%;
+        }
+
+        span {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  .portfolio .project-block,
+  .project .project-block {
+    h4,
+    label {
+      font-size: 0.9rem !important;
+    }
+
+    td,
+    p {
+      font-size: 0.8rem !important;
+    }
+
+    .table img {
+      max-width: 25px !important;
+    }
+  }
+
+  .portfolio .queries .btns {
+    button {
+      font-size: 18px;
+    }
+  }
+
+  .project-form {
+    .test-fieldset {
+      @include flex(column);
+      gap: 20px;
+
+      .multi-inputs-article {
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
+
+  .fetch-form .query-fieldset {
+    label {
+      font-size: 0.9rem !important;
+    }
+
+    .input-div {
+      input::placeholder {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  .portfolio .fetch-form .query-fieldset {
+    padding: 10px;
+
+    .sort .selected {
+      gap: 5px;
+      .sort-article {
+        gap: 5px;
+        .sort-input {
+          width: 40px;
+        }
+
+        .sort-btn {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 400px) {
+  .portfolio .project-block {
+    .edit-btn {
+      right: 2px;
+    }
+  }
+
+  .project .project-block .table-section .btns {
+    gap: 5px !important;
+  }
+
+  .portfolio .project-block,
+  .project .project-block {
+    padding: 20px 10px;
+  }
+}

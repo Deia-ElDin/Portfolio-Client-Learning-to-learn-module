@@ -1,0 +1,522 @@
+@import './general';
+
+.project-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+  position: relative;
+  border: 1px solid var(--color-2);
+  border-radius: 20px;
+  padding: var(--block-padding);
+  box-shadow: var(--box-shadow-white);
+
+  .edit-btn {
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    opacity: 0;
+    transition: var(--transition);
+
+    i {
+      font-size: 25px;
+    }
+  }
+
+  .switch-btn-container {
+    @include flex(row);
+    justify-content: space-between;
+    width: 100%;
+
+    label {
+      font-size: 1.2rem;
+      color: var(--color-1);
+      font-weight: bold;
+    }
+  }
+
+  .top-section {
+    width: 100%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 20px;
+    margin-bottom: auto;
+    width: 100%;
+
+    .front-end,
+    .back-end,
+    .no-stack {
+      @include flex(column);
+      gap: 20px;
+      height: max-content;
+
+      .header {
+        @include flex(row);
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    .full-stack {
+      @include flex(column);
+      gap: 20px;
+      height: max-content;
+
+      .header {
+        @include flex(column);
+        align-items: flex-start;
+        width: 100%;
+        gap: 20px;
+      }
+
+      .full-stack-btns {
+        @include flex(column);
+        gap: 20px;
+        width: 100%;
+        height: max-content;
+
+        .ui-article,
+        .server-article {
+          @include flex(row);
+          justify-content: space-between;
+          width: 100%;
+          height: max-content;
+
+          .btns {
+            @include flex(row);
+            gap: 20px;
+          }
+        }
+      }
+    }
+
+    .no-stack {
+      .project-name {
+        color: var(--color-secondary);
+      }
+    }
+
+    .front-end,
+    .back-end,
+    .full-stack {
+      width: 100%;
+
+      .project-name {
+        color: var(--color-secondary);
+      }
+
+      .btns {
+        @include flex(row);
+        gap: 20px;
+
+        button {
+          height: 35px;
+          width: 50px;
+          border: 1px solid var(--color-2);
+          border-radius: 5px;
+          background-color: transparent;
+          box-shadow: 2px 5px 5px #fff;
+          cursor: pointer;
+
+          .anchor-btn-figure {
+            a {
+              @include flex(row);
+
+              img {
+                height: 25px;
+              }
+            }
+          }
+
+          &:active {
+            box-shadow: inset 0 0 5px #fff;
+          }
+        }
+      }
+    }
+
+    .rating {
+      @include flex(row);
+      justify-content: space-between;
+      width: 100%;
+      height: max-content;
+
+      .rating-figure {
+        @include flex(row);
+        gap: 20px;
+        height: 100%;
+
+        .decimal-block {
+          @include flex(row);
+          position: relative;
+          height: 100%;
+
+          .hide {
+            @include flex(row);
+            justify-content: flex-end;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #191d2b;
+            opacity: 0.7;
+          }
+        }
+
+        img {
+          height: 25px;
+        }
+      }
+    }
+
+    .features {
+      @include flex(column);
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+      border: 1px solid var(--color-secondary);
+      border-radius: 20px;
+      padding: 20px;
+
+      .features-section {
+        @include flex(column);
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+
+        .table-section {
+          width: 100%;
+
+          .btns {
+            @include flex(row);
+            justify-content: space-evenly;
+            gap: 20px;
+            width: 100%;
+            margin: 5px 0 20px 0;
+
+            h4 {
+              @include flex(row);
+              cursor: pointer;
+              border: 1px solid var(--color-2);
+              border-radius: 20px;
+              padding: 20px 10px;
+              text-align: center;
+              box-shadow: inset 0 0 5px #fff;
+              flex: 1;
+            }
+          }
+
+          .table {
+            width: 100%;
+
+            tbody,
+            tfoot {
+              width: 100%;
+            }
+
+            .tech-tr {
+              .tech-td {
+                .tech-article {
+                  @include flex(row);
+                  justify-content: flex-start;
+                  gap: 10px;
+
+                  .tech-name {
+                    text-align: start;
+                    text-transform: capitalize;
+                  }
+                }
+              }
+
+              .code-lines-td,
+              .percentage-td {
+                white-space: nowrap;
+              }
+            }
+
+            figure {
+              @include flex(row);
+
+              img {
+                height: 25px;
+              }
+            }
+
+            .zero-tech-figure {
+              @extend figure;
+              justify-content: space-between;
+
+              img {
+                max-width: 35px;
+                max-height: 25px;
+              }
+            }
+
+            tr {
+              width: 100%;
+              text-align: center;
+
+              td {
+                border: 1px solid var(--color-2);
+                padding: 10px;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+
+        .responsive {
+          @include flex(row);
+          justify-content: space-between;
+          width: 100%;
+
+          figure {
+            @include flex(row);
+            gap: 20px;
+            width: max-content;
+
+            img {
+              height: 25px;
+            }
+          }
+        }
+
+        .tested-with {
+          @include flex(row);
+          justify-content: space-between;
+          width: 100%;
+
+          article {
+            @include flex(row);
+            justify-content: space-between;
+            width: 100%;
+
+            figure {
+              @include flex(row);
+              gap: 20px;
+              width: max-content;
+
+              img {
+                height: 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-section {
+    @include flex(column);
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    border: 1px solid var(--color-secondary);
+    border-radius: 20px;
+    padding: 20px;
+
+    .dates-section {
+      @include flex(column);
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+
+      .date-block {
+        @include flex(row);
+        width: 100%;
+        justify-content: space-between;
+
+        .duration {
+          color: var(--color-secondary);
+        }
+      }
+    }
+  }
+
+  .more-details-btn {
+    @include flex(row);
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--color-2);
+    border-radius: 10px;
+    padding: 15px 0;
+    box-shadow: inset 0 2px 5px 3px white;
+    background-color: var(--color-secondary);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .edit-btn {
+      opacity: 1;
+    }
+  }
+}
+
+.project-form {
+  z-index: 1;
+  width: 80%;
+
+  .switch-btns-fieldset {
+    @include flex(row);
+    justify-content: space-evenly;
+  }
+
+  .img-fieldset,
+  .tech-fieldset,
+  .ui-fieldset,
+  .server-fieldset,
+  .test-fieldset {
+    border-radius: 20px;
+    border: 1px solid var(--color-secondary);
+    padding: 20px;
+  }
+
+  .details-fieldset,
+  .date-fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .details-fieldset {
+    .general-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .ui-fieldset,
+  .server-fieldset {
+    .general-section {
+      margin-top: 20px;
+    }
+  }
+
+  .tech-fieldset {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .test-fieldset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.fetch-form {
+  z-index: 1;
+  width: 80%;
+  position: relative;
+
+  .url-article {
+    @include flex(row);
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    max-width: 100%;
+    background-color: black;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 30px;
+    max-width: 100%;
+    width: 100%;
+
+    .full-url {
+      word-break: break-all;
+      color: white;
+    }
+  }
+}
+
+.project {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+
+  .section-title {
+    height: 150px;
+  }
+
+  .project-block {
+    .top-section {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  }
+
+  .project-form {
+    position: absolute;
+    top: 180px;
+    right: 50%;
+    transform: translate(50%);
+  }
+}
+
+.portfolio {
+  padding-left: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .queries {
+    @include flex(column);
+    gap: 20px;
+    margin-bottom: 40px;
+
+    .btns {
+      @include flex(row);
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .err-comp {
+      align-self: center;
+    }
+  }
+
+  .projects {
+    position: relative;
+    width: 100%;
+
+    .projects-list {
+      @include grid(2);
+      justify-items: center;
+      gap: var(--grid-2-gap);
+    }
+
+    .project-form,
+    .fetch-form {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translate(50%);
+    }
+  }
+}

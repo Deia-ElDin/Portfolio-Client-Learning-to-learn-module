@@ -1,0 +1,139 @@
+@import './general';
+
+.controls {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  height: 100vh;
+  z-index: 3;
+
+  .controls-main {
+    @include flex(column);
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 50%;
+    right: 30px;
+    height: 70vh;
+    transform: translateY(50%);
+    z-index: 5;
+    transition: var(--transition);
+
+    .control {
+      height: 55px;
+      width: 55px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .control-btn {
+        @include flex(row);
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--color-3);
+        color: var(--color-1);
+        cursor: pointer;
+
+        .control-icon {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      .multi-btn {
+        @extend .control-btn;
+        position: relative;
+        overflow: hidden;
+
+        section {
+          @include flex(row);
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: 50%;
+          border-top: 1px solid white;
+          background-color: var(--color-3);
+
+          div {
+            @include flex(row);
+            border: 1px solid white;
+            font-weight: bold;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      .active-multi-btn {
+        @extend .multi-btn;
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+
+        section {
+          color: var(--color-white);
+
+          div {
+            background-color: var(--color-secondary);
+          }
+        }
+      }
+
+      .active-btn {
+        @extend .control-btn;
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+      }
+
+      .active-login {
+        @extend .control-btn;
+        background-color: var(--color-white);
+      }
+    }
+  }
+
+  section.title {
+    display: none;
+  }
+
+  .controls-secondary {
+    @extend .controls-main;
+    bottom: 49%;
+    right: 60px;
+    transform: translateY(51%);
+    z-index: 4;
+    opacity: 0;
+
+    .control {
+      .control-btn {
+        background-color: var(--color-4);
+        opacity: 0.5;
+      }
+
+      .active-login {
+        background-color: var(--color-white);
+        opacity: 1;
+        cursor: not-allowed;
+      }
+
+      .disable-logout {
+        @extend .control-btn;
+        cursor: not-allowed;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    .controls-secondary {
+      opacity: 1;
+    }
+  }
+}

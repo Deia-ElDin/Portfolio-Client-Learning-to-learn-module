@@ -1,0 +1,490 @@
+@import './general';
+
+form {
+  @include flex(column);
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  height: max-content;
+  border: 1px solid var(--color-secondary);
+  position: relative;
+
+  .edit-target {
+    color: var(--color-secondary);
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .bye-icon {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    height: 30px;
+    cursor: pointer;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .slider {
+    width: 100%;
+    accent-color: var(--color-secondary);
+    height: max-content;
+
+    input {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  input {
+    text-align: center;
+    outline: none;
+  }
+
+  input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+  }
+
+  input[type='number'] {
+    padding: 0 5px 0 10px;
+  }
+
+  fieldset {
+    border: none;
+    width: 100%;
+  }
+
+  .general-section {
+    @include flex(column);
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+
+    label {
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+
+    .input-div {
+      position: relative;
+      width: 100%;
+      height: max-content;
+
+      input {
+        min-height: 40px;
+        border-radius: 20px;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: 1px solid;
+        padding: 0 20px;
+      }
+
+      .input-err {
+        @extend input;
+        border: 1px solid red;
+      }
+
+      .password-icon {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        margin-right: 5px;
+        font-size: 1.5rem;
+        color: var(--color-secondary);
+      }
+
+      .err-icon {
+        @extend .password-icon;
+        color: red;
+      }
+    }
+  }
+
+  .checkbox-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+
+    label {
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+  }
+
+  .multi-inputs-article {
+    @include flex(row);
+    justify-content: space-between;
+    gap: 10px;
+    height: 30px;
+    width: max-content;
+
+    label {
+      @include flex(row);
+
+      img {
+        height: 27px;
+        width: 25px;
+      }
+    }
+
+    input {
+      width: 100px;
+      height: 30px;
+    }
+
+    .multi-inputs-err {
+      @extend input;
+      border: 1px solid red;
+    }
+  }
+
+  .drop-file-section {
+    @include flex(row);
+    width: 100%;
+    opacity: 0.7;
+
+    label {
+      @include flex(column);
+      position: relative;
+      width: 350px;
+      border: 2px dashed rgb(100, 149, 237);
+      border-radius: 20px;
+      cursor: pointer;
+
+      img {
+        width: 100px;
+        height: auto;
+        padding: 20px;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      span {
+        @include flex(row);
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      &:hover {
+        opacity: 0.5;
+        background-color: white;
+        color: rgb(100, 149, 237);
+      }
+    }
+  }
+
+  .query-fieldset {
+    display: grid;
+    grid-template-columns: 40px 150px auto;
+    align-items: center;
+    width: 100%;
+
+    .on {
+      opacity: 1;
+    }
+
+    .off {
+      opacity: 0.7;
+    }
+
+    label,
+    input,
+    select,
+    button {
+      @include flex(row);
+      height: 30px;
+    }
+
+    label {
+      justify-content: flex-start;
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+
+    .input-div {
+      width: 100%;
+
+      input {
+        border-radius: 20px;
+        width: 100%;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: 1px solid;
+        padding: 0 20px;
+
+        &::placeholder {
+          font-size: 1rem;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .btns-section {
+      @include flex(row);
+      gap: 20px;
+      width: 100%;
+      height: 30px;
+
+      button {
+        width: 50%;
+        border: 1px solid var(--color-2);
+        border-radius: 5px;
+        background-color: var(--color-4);
+        box-shadow: 2px 5px 5px #fff;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .active {
+        box-shadow: inset 0 0 0 2px var(--color-secondary);
+      }
+    }
+
+    .btn-section {
+      @include flex(row);
+      gap: 20px;
+      width: 100%;
+      height: 30px;
+
+      button {
+        width: 100%;
+        border: 1px solid var(--color-2);
+        border-radius: 5px;
+        background-color: var(--color-4);
+        box-shadow: 2px 5px 5px #fff;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .active {
+        box-shadow: inset 0 0 0 2px var(--color-secondary);
+      }
+    }
+
+    .sort {
+      @include flex(column);
+      gap: 10px;
+      width: 100%;
+
+      .selector {
+        width: 100%;
+
+        select {
+          width: 100%;
+          font-size: 1rem;
+          text-align: center;
+
+          option {
+            text-align: center;
+          }
+        }
+      }
+
+      .selected {
+        @include flex(row);
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+
+        .sort-article {
+          @include flex(row);
+          gap: 10px;
+          flex: 1;
+
+          .sort-input {
+            width: 50px;
+            border-radius: 20px;
+            border: none;
+
+            &::placeholder {
+              opacity: 0.7;
+            }
+          }
+
+          .sort-input-err {
+            @extend .sort-input;
+            border: 1px solid red;
+          }
+
+          .sort-btn {
+            @include flex(row);
+            gap: 5px;
+            flex: 1;
+            min-width: max-content;
+            padding: 0 10px;
+            border: 1px solid var(--color-2);
+            border-radius: 5px;
+            background-color: var(--color-4);
+            box-shadow: 2px 5px 5px #fff;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+
+            .arrows {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+
+          .active {
+            box-shadow: inset 0 0 0 2px var(--color-secondary);
+          }
+
+          .remove-btn {
+            width: 25px;
+            height: 25px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+
+            img {
+              width: 25px;
+              height: 25px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .multi-inputs-section {
+      @include flex(row);
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 5px 10px;
+      width: 100%;
+      height: 100%;
+
+      .multi-inputs-article {
+        .symbols {
+          @include flex(row);
+          justify-content: flex-end;
+          width: 30px;
+        }
+
+        input[type='number'] {
+          border-radius: 20px;
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+.form-err {
+  border: 1px solid red;
+}
+
+.general-btn {
+  align-self: center;
+  background: #80fbb3;
+  background-image: -webkit-linear-gradient(top, #80fbb3, #16984c);
+  background-image: -moz-linear-gradient(top, #80fbb3, #16984c);
+  background-image: -ms-linear-gradient(top, #80fbb3, #16984c);
+  background-image: -o-linear-gradient(top, #80fbb3, #16984c);
+  background-image: linear-gradient(to bottom, #80fbb3, #16984c);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  outline: none;
+  border: 1px solid white;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #8bf5b6;
+    background-image: -webkit-linear-gradient(top, #8bf5b6, #138241);
+    background-image: -moz-linear-gradient(top, #8bf5b6, #138241);
+    background-image: -ms-linear-gradient(top, #8bf5b6, #138241);
+    background-image: -o-linear-gradient(top, #8bf5b6, #138241);
+    background-image: linear-gradient(to bottom, #8bf5b6, #138241);
+    text-decoration: none;
+  }
+
+  &:active {
+    font-size: 18px;
+    padding: 12px 20px 12px 20px;
+    box-shadow: inset 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.delete-btn {
+  @extend .general-btn;
+  background: #fc9f9f;
+  background-image: -webkit-linear-gradient(top, #fc9f9f, #ff0000);
+  background-image: -moz-linear-gradient(top, #fc9f9f, #ff0000);
+  background-image: -ms-linear-gradient(top, #fc9f9f, #ff0000);
+  background-image: -o-linear-gradient(top, #fc9f9f, #ff0000);
+  background-image: linear-gradient(to bottom, #fc9f9f, #ff0000);
+
+  &:hover {
+    background: #fa8282;
+    background-image: -webkit-linear-gradient(top, #fa8282, #d90000);
+    background-image: -moz-linear-gradient(top, #fa8282, #d90000);
+    background-image: -ms-linear-gradient(top, #fa8282, #d90000);
+    background-image: -o-linear-gradient(top, #fa8282, #d90000);
+    background-image: linear-gradient(to bottom, #fa8282, #d90000);
+    text-decoration: none;
+  }
+}
+
+.query-btn {
+  @extend .general-btn;
+  background: #b2becd;
+  background-image: -webkit-linear-gradient(top, #b2becd, #454e56);
+  background-image: -moz-linear-gradient(top, #b2becd, #454e56);
+  background-image: -ms-linear-gradient(top, #b2becd, #454e56);
+  background-image: -o-linear-gradient(top, #b2becd, #454e56);
+  background-image: linear-gradient(to bottom, #b2becd, #454e56);
+
+  &:hover {
+    background: #b2becd;
+    background-image: -webkit-linear-gradient(top, #b2becd, #2a2e35);
+    background-image: -moz-linear-gradient(top, #b2becd, #2a2e35);
+    background-image: -ms-linear-gradient(top, #b2becd, #2a2e35);
+    background-image: -o-linear-gradient(top, #b2becd, #2a2e35);
+    background-image: linear-gradient(to bottom, #b2becd, #2a2e35);
+    text-decoration: none;
+  }
+}
+
+.active-query {
+  @extend .general-btn;
+}
+
+.update-delete-btns-section {
+  @include flex(row);
+  justify-content: space-between;
+  width: 100%;
+}
