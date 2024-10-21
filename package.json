@@ -1,5 +1,5 @@
 {
-  "homepage": "http://localhost:3000/",
+  "homepage": "https://deia-portfolio.vercel.app",
   "name": "portfolio",
   "version": "2.0.0",
   "private": true,

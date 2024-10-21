@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials, logout } from "../../features/auth/authSlice";
 
-// export const BASE_URL = 'https://p8-portfolio-v2-restapi.cyclic.app';
-export const BASE_URL = "http://localhost:5000/";
+export const BASE_URL = "https://deia-portfolio-server.vercel.app/";
+// export const BASE_URL = "http://localhost:5000/";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
