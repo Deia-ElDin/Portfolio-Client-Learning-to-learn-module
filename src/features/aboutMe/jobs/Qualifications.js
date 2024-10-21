@@ -28,9 +28,8 @@ const Qualifications = () => {
           e.target.style.boxShadow = "0 8px 15px rgba(39, 174, 96, 0.4)";
         }}
       >
-        Institute of Aviation Engineering & Technology (2006 - 2012)
+        42 AbuDhabi (2023 - now)
       </p>
-
       <p
         style={{
           width: "fit-content",
@@ -55,7 +54,7 @@ const Qualifications = () => {
           e.target.style.boxShadow = "0 8px 15px rgba(39, 174, 96, 0.4)";
         }}
       >
-        42 AbuDhabi (2023 - now)
+        Institute of Aviation Engineering & Technology (2006 - 2012)
       </p>
     </section>
   );
