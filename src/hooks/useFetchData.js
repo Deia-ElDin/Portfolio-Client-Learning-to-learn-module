@@ -27,15 +27,11 @@ const useFetchData = () => {
     isError: isProfilePicErr,
   } = useGetProfilePicQuery();
 
-  console.log("profilePic", profilePic);
-
   const {
     data: skills,
     isSuccess: isSkillsSuccess,
     isError: isSkillsErr,
   } = useGetAllSkillsQuery();
-
-  console.log("skills", skills);
 
   const {
     data: jobs,
@@ -43,7 +39,6 @@ const useFetchData = () => {
     isError: isJobsErr,
   } = useGetAllJobsQuery();
 
-  console.log("jobs", jobs);
 
   const {
     data: projects,
