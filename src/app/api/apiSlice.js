@@ -3,8 +3,7 @@ import { setCredentials, logout } from "../../features/auth/authSlice";
 
 // export const BASE_URL = "https://deia-portfolio-server.vercel.app/";
 // export const BASE_URL = "http://localhost:5000/";
-export const BASE_URL =
-  "https://portfolio-server-learning-to-learn-module.onrender.com/";
+export const BASE_URL = "https://portfolio-server-learning-to-learn-module.onrender.com/";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,

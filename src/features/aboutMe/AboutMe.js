@@ -1,7 +1,10 @@
-import Title from '../helpers/components/title/Title';
-import Infos from './infos/Infos';
-import Skills from './skills/Skills';
-import Jobs from './jobs/Jobs';
+import Title from "../helpers/components/title/Title";
+import Qualifications from "./jobs/Qualifications";
+import Infos from "./infos/Infos";
+import Skills from "./skills/Skills";
+import Jobs from "./jobs/Jobs";
+import Achievements from "./jobs/Achievements";
+import Reflection from "./jobs/Reflection";
 
 const AboutMe = () => {
   return (
@@ -9,9 +12,15 @@ const AboutMe = () => {
       <Title mainTitle="ABOUT" spanText="ME" subTitle="MY STATS" />
       <Infos />
       <hr />
+      <Qualifications />
+      <hr />
       <Skills />
       <hr />
       <Jobs />
+      <hr />
+      <Achievements />
+      <hr />
+      <Reflection />
     </section>
   );
 };
